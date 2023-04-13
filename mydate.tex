@@ -1,0 +1,23 @@
+\documentclass{article}
+
+\usepackage[en,useregional]{datetime2}
+
+
+\DTMnewdatestyle{mydateformat}{
+	\renewcommand{\DTMdisplaydate}[4]{
+		\DTMtwodigits{##3}~\DTMenglishmonthname{##2}~\number##1
+	}
+	\renewcommand{\DTMDisplaydate}[4]{%
+		\DTMdisplaydate{##3}{##2}{##1}{##4}%
+	}%
+}
+\DTMsetdatestyle{mydateformat}
+
+
+\begin{document}
+	
+	\DTMdate{2022-2-2}  % When you input date as YYYY-MM-DD format
+	\\	
+	\DTMDate{12-4-2023} % When you input date as DD-MM-YYYY fomat
+	
+\end{document}
